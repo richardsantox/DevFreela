@@ -1,5 +1,4 @@
-﻿using Azure.Core;
-using DevFreela.Core.Entities;
+﻿using DevFreela.Core.Entities;
 using DevFreela.Core.Repositories;
 using Microsoft.EntityFrameworkCore;
 
@@ -46,7 +45,6 @@ namespace DevFreela.Infrastructure.Persistence.Repositories
               .ToListAsync();
 
             return projects;
-
         }
 
         public async Task<Project?> GetById(int id)

@@ -1,22 +1,21 @@
-﻿using DevFreela.Infrastructure.Persistence;
-using DevFreela.Application.Models;
+﻿using DevFreela.Application.Models;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
+using DevFreela.Core.Repositories;
 
 namespace DevFreela.Application.Commands.DeleteProject
 {
     internal class DeleteProjectHandler : IRequestHandler<DeleteProjectCommnad, ResultViewModel>
     {
-        private readonly DevFreelaDbContext _context;
+        private readonly IProjectRepository _repository;
 
-        public DeleteProjectHandler(DevFreelaDbContext context)
+        public DeleteProjectHandler(IProjectRepository repository)
         {
-            _context = context;
+            _repository = repository;
         }
 
         public async Task<ResultViewModel> Handle(DeleteProjectCommnad request, CancellationToken cancellationToken)
         {
-            var project = await _context.Projects.SingleOrDefaultAsync(p => p.Id == request.Id);
+            var project = await _repository.GetById(request.Id);
 
             if (project is null)
             {
@@ -24,8 +23,7 @@ namespace DevFreela.Application.Commands.DeleteProject
             }
 
             project.SetAsDeleted();
-            _context.Projects.Update(project);
-            await _context.SaveChangesAsync();
+            await _repository.Update(project);
 
             return ResultViewModel.Success();
         }

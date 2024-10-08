@@ -25,5 +25,6 @@ namespace DevFreela.Application
 
             return services;
         }
+
     }
 }
