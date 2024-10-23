@@ -4,7 +4,7 @@ using DevFreela.Core.Repositories;
 using DevFreela.Infrastructure.Persistence;
 using MediatR;
 
-namespace DevFreela.Application.Commands.InsertProject
+namespace DevFreela.Application.Commands.Projects.InsertProject
 {
     internal class InsertProjectHandler : IRequestHandler<InsertProjectCommand, ResultViewModel<int>>
     {
@@ -22,7 +22,7 @@ namespace DevFreela.Application.Commands.InsertProject
 
             await _repository.Add(project);
 
-            var projectCreated = new ProjectCreatedNotification(project.Id , project.Title, project.TotalCost);
+            var projectCreated = new ProjectCreatedNotification(project.Id, project.Title, project.TotalCost);
             await _mediator.Publish(projectCreated);
 
             return ResultViewModel<int>.Success(project.Id);

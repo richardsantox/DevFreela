@@ -1,14 +1,14 @@
 ﻿using DevFreela.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Mvc;
 using MediatR;
-using DevFreela.Application.Queries.GetAllProject;
-using DevFreela.Application.Queries.GetProjectById;
-using DevFreela.Application.Commands.InsertProject;
-using DevFreela.Application.Commands.UpdateProject;
-using DevFreela.Application.Commands.DeleteProject;
-using DevFreela.Application.Commands.StartProject;
-using DevFreela.Application.Commands.CompleteProject;
-using DevFreela.Application.Commands.InsertComment;
+using DevFreela.Application.Queries.Projects.GetAllProject;
+using DevFreela.Application.Queries.Projects.GetProjectById;
+using DevFreela.Application.Commands.Projects.DeleteProject;
+using DevFreela.Application.Commands.Projects.StartProject;
+using DevFreela.Application.Commands.Projects.CompleteProject;
+using DevFreela.Application.Commands.Projects.InsertProject;
+using DevFreela.Application.Commands.Projects.UpdateProject;
+using DevFreela.Application.Commands.Projects.InsertComment;
 
 namespace DevFreela.API.Controllers
 {

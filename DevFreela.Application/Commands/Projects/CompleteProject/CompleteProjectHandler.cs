@@ -1,19 +1,19 @@
 ﻿using DevFreela.Application.Models;
-using MediatR;
 using DevFreela.Core.Repositories;
+using MediatR;
 
-namespace DevFreela.Application.Commands.StartProject
+namespace DevFreela.Application.Commands.Projects.CompleteProject
 {
-    internal class StartProjectHandler : IRequestHandler<StartProjectCommand, ResultViewModel>
+    internal class CompleteProjectHandler : IRequestHandler<CompleteProjectCommand, ResultViewModel>
     {
         private readonly IProjectRepository _repository;
 
-        public StartProjectHandler(IProjectRepository repository)
+        public CompleteProjectHandler(IProjectRepository repository)
         {
             _repository = repository;
         }
 
-        public async Task<ResultViewModel> Handle(StartProjectCommand request, CancellationToken cancellationToken)
+        public async Task<ResultViewModel> Handle(CompleteProjectCommand request, CancellationToken cancellationToken)
         {
             var project = await _repository.GetById(request.Id);
 
@@ -22,7 +22,7 @@ namespace DevFreela.Application.Commands.StartProject
                 return ResultViewModel.Error("Projeto não encontrado.");
             }
 
-            project.Start();
+            project.Complete();
             await _repository.Update(project);
 
             return ResultViewModel.Success();

@@ -2,7 +2,7 @@
 using DevFreela.Core.Repositories;
 using MediatR;
 
-namespace DevFreela.Application.Queries.GetAllProject
+namespace DevFreela.Application.Queries.Projects.GetAllProject
 {
     public class GetAllprojectHandler : IRequestHandler<GetAllProjectQuery, ResultViewModel<List<ProjectItemViewModel>>>
     {

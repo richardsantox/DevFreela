@@ -2,7 +2,7 @@
 using MediatR;
 using DevFreela.Core.Repositories;
 
-namespace DevFreela.Application.Commands.UpdateProject
+namespace DevFreela.Application.Commands.Projects.UpdateProject
 {
     internal class UpdateProjectHandler : IRequestHandler<UpdateProjectCommand, ResultViewModel>
     {

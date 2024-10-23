@@ -2,7 +2,7 @@
 using DevFreela.Infrastructure.Persistence;
 using MediatR;
 
-namespace DevFreela.Application.Commands.InsertProject
+namespace DevFreela.Application.Commands.Projects.InsertProject
 {
     class ValidateInsertProjectCommandBehavior :
         IPipelineBehavior<InsertProjectCommand, ResultViewModel<int>>
