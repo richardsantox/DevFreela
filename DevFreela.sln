@@ -5,11 +5,13 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevFreela.API", "DevFreela.API\DevFreela.API.csproj", "{6C5F8324-7009-4E89-949E-7035DC83DC62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFreela.Application", "DevFreela.Application\DevFreela.Application.csproj", "{C8E4F0A2-11DF-4575-8761-4464BFF4FAE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevFreela.Application", "DevFreela.Application\DevFreela.Application.csproj", "{C8E4F0A2-11DF-4575-8761-4464BFF4FAE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFreela.Infrastructure", "DevFreela.Infrastructure\DevFreela.Infrastructure.csproj", "{7EC34BCC-066A-4230-B94B-C8B4FA48A05D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevFreela.Infrastructure", "DevFreela.Infrastructure\DevFreela.Infrastructure.csproj", "{7EC34BCC-066A-4230-B94B-C8B4FA48A05D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFreela.Core", "DevFreela.Core\DevFreela.Core.csproj", "{E1E0A726-E110-4F0C-98CA-2A95EEBE4A67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevFreela.Core", "DevFreela.Core\DevFreela.Core.csproj", "{E1E0A726-E110-4F0C-98CA-2A95EEBE4A67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFreela.UnitTest", "DevFreela.UnitTest\DevFreela.UnitTest.csproj", "{F737F004-D842-45B4-B839-E807681E258D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{E1E0A726-E110-4F0C-98CA-2A95EEBE4A67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1E0A726-E110-4F0C-98CA-2A95EEBE4A67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1E0A726-E110-4F0C-98CA-2A95EEBE4A67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F737F004-D842-45B4-B839-E807681E258D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F737F004-D842-45B4-B839-E807681E258D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F737F004-D842-45B4-B839-E807681E258D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F737F004-D842-45B4-B839-E807681E258D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
