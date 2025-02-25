@@ -8,14 +8,11 @@ namespace DevFreela.Application.Commands.Users.InsertUserSkill
 {
     internal class InsertUserSkillHandler : IRequestHandler<InsertUserSkillCommand, ResultViewModel>
     {
-
-        private readonly DevFreelaDbContext _context;
         private readonly IUserRepository _userRepository;
 
         public InsertUserSkillHandler(DevFreelaDbContext context, 
             IUserRepository userRepository)
         {
-            _context = context;
             _userRepository = userRepository;
         }
 

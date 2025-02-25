@@ -10,12 +10,10 @@ namespace DevFreela.API.Controllers
     [ApiController]
     public class SkillsController : ControllerBase
     {
-        private readonly DevFreelaDbContext _context;
         private readonly IMediator _mediator;
 
-        public SkillsController(DevFreelaDbContext context, IMediator mediator)
+        public SkillsController(IMediator mediator)
         {
-            _context = context;
             _mediator = mediator;
         }
 

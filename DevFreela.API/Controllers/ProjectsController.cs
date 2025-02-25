@@ -16,12 +16,10 @@ namespace DevFreela.API.Controllers
     [ApiController]
     public class ProjectsController : ControllerBase    
     {
-        private readonly DevFreelaDbContext _context;
         private readonly IMediator _mediator;
 
-        public ProjectsController(DevFreelaDbContext context, IMediator mediator)
+        public ProjectsController(IMediator mediator)
         {
-            _context = context;
             _mediator = mediator;
         }
 
