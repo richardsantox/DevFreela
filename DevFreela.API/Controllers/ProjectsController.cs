@@ -1,5 +1,4 @@
-﻿using DevFreela.Infrastructure.Persistence;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using MediatR;
 using DevFreela.Application.Queries.Projects.GetAllProject;
 using DevFreela.Application.Queries.Projects.GetProjectById;
@@ -9,11 +8,13 @@ using DevFreela.Application.Commands.Projects.CompleteProject;
 using DevFreela.Application.Commands.Projects.InsertProject;
 using DevFreela.Application.Commands.Projects.UpdateProject;
 using DevFreela.Application.Commands.Projects.InsertComment;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DevFreela.API.Controllers
 {
     [Route("api/projects")]
     [ApiController]
+    [Authorize]
     public class ProjectsController : ControllerBase    
     {
         private readonly IMediator _mediator;
@@ -24,6 +25,7 @@ namespace DevFreela.API.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> Get(string search = "", int page = 0, int size = 3)
         {
             var query = new GetAllProjectQuery(page, size, search);

@@ -34,5 +34,12 @@ namespace DevFreela.Infrastructure.Persistence.Repositories
             await _context.AddRangeAsync(userSkills);
             await _context.SaveChangesAsync();
         }
+
+        public async Task<User?> GetByLogin(string email, string password)
+        {
+            return await _context.Users
+                .SingleOrDefaultAsync(u => 
+                    u.Email == email && u.Password == password);
+        }
     }
 }

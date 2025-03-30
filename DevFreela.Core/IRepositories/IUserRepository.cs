@@ -7,5 +7,6 @@ namespace DevFreela.Core.IRepositories
         public Task<User?> GetById(int id);
         public Task<int> Add(User user);
         public Task AddUserSkill(List<UserSkill> userSkills);
+        public Task<User?> GetByLogin(string email, string password);
     }
 }
