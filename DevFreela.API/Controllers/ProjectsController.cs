@@ -25,7 +25,7 @@ namespace DevFreela.API.Controllers
         }
 
         [HttpGet]
-        [Authorize]
+        [Authorize(Roles = "freelancer, client")]
         public async Task<IActionResult> Get(string search = "", int page = 0, int size = 3)
         {
             var query = new GetAllProjectQuery(page, size, search);
@@ -47,6 +47,7 @@ namespace DevFreela.API.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "client")]
         public async Task<IActionResult> Post(InsertProjectCommand command)
         {
             var result = await _mediator.Send(command);

@@ -1,6 +1,10 @@
 ﻿using DevFreela.Application.Commands.Login;
+using DevFreela.Application.Commands.RecoveryPassword.ChangePassword;
+using DevFreela.Application.Commands.RecoveryPassword.RequestRecoveryPassword;
+using DevFreela.Application.Commands.RecoveryPassword.ValidateRecoveryCode;
 using DevFreela.Application.Commands.Users.InsertUser;
 using DevFreela.Application.Commands.Users.InsertUserSkill;
+using DevFreela.Application.Models;
 using DevFreela.Application.Queries.Users.GetUserById;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -74,6 +78,45 @@ namespace DevFreela.API.Controllers
                 return BadRequest(result.Message);
 
             return Ok(result);
+        }
+
+        [HttpPost("password-recovery/request")]
+        [AllowAnonymous]
+        public async Task<IActionResult> RequestRecoveryPassword(
+            PasswordRecoveryRequestCommand command)
+        {
+            var result = await _mediator.Send(command);
+
+            if (!result.IsSuccess)
+                return BadRequest(result.Message);
+
+            return Ok(result);
+        }
+
+        [HttpPost("password-recovery/validate")]
+        [AllowAnonymous]
+        public async Task<IActionResult> ValideteRecoveryCode(
+            ValidateRecoveryCodeCommand command)
+        {
+            var result = await _mediator.Send(command);
+
+            if (!result.IsSuccess)
+                return BadRequest(result.Message);
+
+            return NoContent();
+        }
+
+        [HttpPost("password-recovery/change")]
+        [AllowAnonymous]
+        public async Task<IActionResult> ChangePassword(
+            ChangePasswordCommand command)
+        {
+            var result = await _mediator.Send(command);
+
+            if (!result.IsSuccess)
+                return BadRequest(result.Message);
+
+            return NoContent();
         }
     }
 }
